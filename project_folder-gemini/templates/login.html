@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="top-nav">
+        <h2>Shop Login</h2>
+        <a href="/" class="nav-link">Home</a>
+    </div>
+
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="error-msg">{{ messages[0] }}</div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="card">
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <label>Mobile Number</label>
+                    <input type="tel" name="mobile" required placeholder="Registered Mobile">
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" name="password" required placeholder="Your Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <p style="text-align: center; margin-top: 15px;">
+                New shop? <a href="/register" style="color: #ffd700;">Register here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

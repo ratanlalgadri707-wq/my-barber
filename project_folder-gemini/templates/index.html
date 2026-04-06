@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Queue Manager</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="top-nav">
+        <h2>💈 Barber Queues</h2>
+        <div>
+            {% if session.get('shop_id') %}
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+            {% else %}
+                <a href="/login" class="nav-link">Login</a>
+                <a href="/register" class="nav-link">Register</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container">
+        <h3>Available Shops</h3>
+        {% if shops|length == 0 %}
+            <p style="text-align:center; color:#888;">No shops registered yet.</p>
+        {% endif %}
+        
+        {% for shop in shops %}
+        <a href="/shop/{{ shop.id }}" class="card-link">
+            <div class="card">
+                <h2>{{ shop.shop_name }}</h2>
+                <div class="status-row">
+                    {% if shop.shop_status == 'open' %}
+                        <span class="badge badge-open">Open</span>
+                    {% else %}
+                        <span class="badge badge-closed">Closed</span>
+                    {% endif %}
+                    <span class="waiting-text">Waiting: <strong style="color: #ffd700;">{{ shop.queue_count }}</strong></span>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    
+    <script src="/static/app.js"></script>
+</body>
+</html>

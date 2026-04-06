@@ -1,0 +1,116 @@
+/* Base Styles & Typography */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* App-like Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+
+/* Navigation Bar */
+.top-nav {
+    background-color: #1e1e1e;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.top-nav h2 { margin: 0; font-size: 20px; color: #ffd700; }
+.nav-link { color: #fff; text-decoration: none; font-size: 14px; margin-left: 10px; background: #333; padding: 6px 12px; border-radius: 20px; }
+
+/* Cards Layout */
+.card {
+    background-color: #1e1e1e;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.card-link { text-decoration: none; color: inherit; display: block; }
+.card h2 { margin-top: 0; font-size: 22px; }
+
+/* Forms & Inputs */
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; margin-bottom: 6px; color: #aaa; font-size: 14px; }
+.input-group input { 
+    width: 100%; 
+    padding: 14px; 
+    border-radius: 10px; 
+    border: 1px solid #333; 
+    background-color: #2a2a2a; 
+    color: #fff; 
+    font-size: 16px; 
+    box-sizing: border-box; 
+    outline: none;
+}
+.input-group input:focus { border-color: #ffd700; }
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+    transition: transform 0.1s;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background-color: #ffd700; color: #121212; }
+.btn-danger { background-color: #ff4757; color: white; }
+.btn-success { background-color: #2ed573; color: #121212; }
+
+.btn-group { margin-top: 15px; }
+
+/* Badges & Status */
+.status-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
+.badge { padding: 5px 12px; border-radius: 20px; font-size: 14px; font-weight: bold; }
+.badge-open { background-color: rgba(46, 213, 115, 0.2); color: #2ed573; }
+.badge-closed { background-color: rgba(255, 71, 87, 0.2); color: #ff4757; }
+.waiting-text { font-size: 16px; color: #aaa; }
+
+.status-indicator { font-size: 24px; font-weight: bold; margin: 15px 0; }
+
+/* Dashboard Queue UI */
+.queue-display { text-align: center; margin: 20px 0; }
+.queue-number { font-size: 90px; font-weight: 800; color: #ffd700; line-height: 1; }
+
+.queue-controls { display: flex; justify-content: center; gap: 30px; margin-top: 20px; }
+.btn-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 45px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.1s;
+}
+.btn-circle:active { transform: scale(0.92); }
+
+/* Details view */
+.detail-box { background: #2a2a2a; border-radius: 12px; padding: 15px; text-align: center; margin-bottom: 15px; }
+
+/* Error message */
+.error-msg { background-color: rgba(255, 71, 87, 0.2); color: #ff4757; padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center; border: 1px solid #ff4757; }

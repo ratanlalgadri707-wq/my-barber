@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ shop.shop_name }}</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="top-nav">
+        <h2>Shop Details</h2>
+        <a href="/" class="nav-link">Back</a>
+    </div>
+
+    <div class="container">
+        <div class="card detail-card">
+            <h1 style="color: #ffd700; margin-bottom: 5px;">{{ shop.shop_name }}</h1>
+            <p style="color: #aaa; margin-top: 0;">Barber: {{ shop.barber_name }}</p>
+            
+            <div class="detail-box">
+                {% if shop.shop_status == 'open' %}
+                    <h2 style="color: #28a745;">Shop is OPEN</h2>
+                {% else %}
+                    <h2 style="color: #dc3545;">Shop is CLOSED</h2>
+                {% endif %}
+            </div>
+
+            <div class="detail-box">
+                <p>Currently Waiting</p>
+                <div class="queue-number" style="font-size: 60px;">{{ shop.queue_count }}</div>
+            </div>
+
+            <hr style="border-color: #333; margin: 20px 0;">
+            
+            <h3>Contact Info</h3>
+            <p><strong>Mobile:</strong> {{ shop.mobile }}</p>
+            <p><strong>Address:</strong> {{ shop.address }}</p>
+        </div>
+    </div>
+</body>
+</html>
